@@ -1,10 +1,33 @@
 package pe.unjfsc.quiz.java11.logical;
 
 import java.util.HashSet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pe.unjfsc.quiz.java11.entity.CECliente;
 
 public class CLCliente {
 
+    private static final Logger LOG = LoggerFactory.getLogger(CLCliente.class);
+    private HashSet<CECliente> oHsData;
+    private CECliente oCliente;
+
+    public CLCliente(){
+        LOG.info("[FSI] Start CMRetiroSaldoHashSet before crear la instancia: {} ", oHsData);
+        oHsData = new HashSet<>();
+
+        LOG.info("[FSI] Count del HashSet : ", oHsData.isEmpty());
+        //oHsData.add(new CECliente(1, "2002", 2002.99));
+        //oHsData.add(new CECliente(2, "2003", 2003.99));
+        //oHsData.add(new CECliente(3, "2004", 2004.99));
+        //oHsData.add(new CECliente(4, "2005", 2005.99));
+        //oHsData.add(new CECliente(5, "2006", 2006.99));
+        LOG.info("[FSI] After - Cpunt del HashSet : {}", oHsData.size());
+        
+        
+    }
+
+    
+    //METODOS
     public Object[][] convertHashSetArray(HashSet<CECliente> poHsData) {
 
         String[][] aDataResponse = new String[poHsData.size()][9];
@@ -24,7 +47,7 @@ public class CLCliente {
         }
         return aDataResponse;
     }
-    
+
     public Object Impuesto(double ImpPedido) {
         double imp18
                 = Math.round((ImpPedido * 0.18) * 100.0) / 100.0;
