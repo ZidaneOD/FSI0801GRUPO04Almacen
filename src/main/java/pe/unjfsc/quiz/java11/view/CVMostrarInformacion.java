@@ -19,6 +19,9 @@ public class CVMostrarInformacion extends javax.swing.JFrame {
     CMCambiarCliemte oCMCategoria;
 
     public CVMostrarInformacion() {
+        oCMCategoria = new CMCambiarCliemte();
+        oCliente = new CECliente();
+
         initComponents();
         String[] aTitulo = {"O.Pedido", "Orden", "Cliente", "Importe P.", "Imp 18%", "Total P.", "Retenc 20%", "Retenc 30%", "Retenc 40%"};
         DefaultTableModel oModel = new DefaultTableModel(loadData(), aTitulo);

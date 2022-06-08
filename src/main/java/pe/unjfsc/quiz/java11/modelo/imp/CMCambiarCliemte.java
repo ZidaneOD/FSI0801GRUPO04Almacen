@@ -38,9 +38,28 @@ public class CMCambiarCliemte implements CICCambioCliente {
         oHsData.add(new CECliente("333192009", "19", "MEDRANO TORRES LEONARDO ALONSO", 3870.55));
         oHsData.add(new CECliente("333191014", "20", "MELENDEZ DAVILA LUIS ROBERTO", 4016.17));
         oHsData.add(new CECliente("333191014", "21", "MELENDEZ PANANA BRANDON DANIEL", 4161.79));
-        oHsData.add(new CECliente("333191014", "21", "MELENDEZ PANANA BRANDON DANIEL", 4161.79));
+        oHsData.add(new CECliente("333181020", "22", "MORALES OYOLA JOSE JEAN PIERRE", 4307.41));
+        oHsData.add(new CECliente("333191015", "23", "MORENO FERMIN MICHAEL FELIPE", 4453.03));
+        oHsData.add(new CECliente("333132027", "24", "MOYA PACHECO FREDDY WILLY", 4598.65));
+        oHsData.add(new CECliente("333161031", "25", "NATIVIDAD RODRIGUEZ JOSE ANTHONY", 4744.27));
+        oHsData.add(new CECliente("333192024", "26", "NAVARRO ANASTACIO MIRELLA ANAI", 4889.89));
+        oHsData.add(new CECliente("333192025", "27", "ORTIZ DIAZ ZINEDINE ZIDANE", 5035.51));
+        oHsData.add(new CECliente("333182021", "28", "OSTOS ANDRES CARLOS ALBEYRO", 5181.13));
+        oHsData.add(new CECliente("333152020", "29", "PANANA ARISMENDIZ ALDAIR MIGUEL", 5326.75));
+        oHsData.add(new CECliente("333191035", "30", "PAZ SOLDAN BERNAL CARLOS GUILLERMO", 5472.37));
+        oHsData.add(new CECliente("333182022", "31", "PEREZ OSORIO ANGEL ROBERTO", 5617.99));
+        oHsData.add(new CECliente("333172023", "32", "PIZARRO BARRIOS GIANPIERRE GUILLERMO", 5763.61));
+        oHsData.add(new CECliente("333192027", "33", "QUESQUEN CARVALLO TATIANA DEL PILAR", 5909.23));
+        oHsData.add(new CECliente("333192028", "34", "RIOS NICHO KEVIN JHOEL", 6054.85));
+        oHsData.add(new CECliente("333191023", "35", "SANTOS ISIDRO CRISTIAN ALVARO", 6200.47));
+        oHsData.add(new CECliente("333141039", "36", "SÍLVA CUEVA ALEXANDER HERNÁN", 6346.09));
+        oHsData.add(new CECliente("333192030", "37", "TADEO JARA CHRISTOPER RAUL", 6491.71));
+        oHsData.add(new CECliente("333191038", "38", "SUÑURUCO HUAMAN DANIEL ALEJANDRO", 6637.33));
+        oHsData.add(new CECliente("333152032", "39", "VÁSQUEZ JARAMILLO SERGIO DAVID", 6782.95));
+        oHsData.add(new CECliente("333152032", "40", "VEREAU FLORES GIOVANNI NILO", 6928.57));
 
         LOG.info("[FSI] After - Cpunt del HashSet : {}", oHsData.size());
+
     }
 
     @Override
