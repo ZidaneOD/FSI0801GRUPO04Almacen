@@ -35,8 +35,11 @@ public class CLCliente {
         int iRow = 0;
 
         for (CECliente oItem : poHsData) {
-            double cd = ((double) oItem.getImpPedido() - (double) Retenc20((double) Impuesto(oItem.getImpPedido()))) / 2;
-            if (cd > 200) {
+            double impuesto = (double) Impuesto(oItem.getImpPedido());
+            double retec20 = (double) Retenc20(impuesto);
+
+            //double cd = ((double) oItem.getImpPedido() - (double) Retenc20((double) Impuesto(oItem.getImpPedido()))) / 2;
+            if (retec20 > 200) {
                 aDataResponse[iRow][0] = oItem.getOrdenP();
                 aDataResponse[iRow][1] = oItem.getOrden();
                 aDataResponse[iRow][2] = oItem.getNombre();
