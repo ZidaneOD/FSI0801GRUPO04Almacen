@@ -6,13 +6,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pe.unjfsc.quiz.java11.entity.CECliente;
 import pe.unjfsc.quiz.java11.logical.CLCliente;
+import pe.unjfsc.quiz.java11.model.CICCambioCliente;
+import pe.unjfsc.quiz.java11.modelo.imp.CMCambiarCliemte;
 
 public class CVMostrarInformacion extends javax.swing.JFrame {
 
     private static final Logger LOG = LoggerFactory.getLogger("CVMostrarInformacion");
-    private CECliente oCliente;
+
     private HashSet<CECliente> oHsData;
-    private CLCliente oCLCliente;
+    private CICCambioCliente oCICliente;
+    CECliente oCliente;
+    CMCambiarCliemte oCMCategoria;
 
     public CVMostrarInformacion() {
         initComponents();
@@ -25,11 +29,10 @@ public class CVMostrarInformacion extends javax.swing.JFrame {
     }
 
     private Object[][] loadData() {
-        oCLCliente = new CLCliente();
-
-        oHsData = oCLCliente.consultAllClienteCIC();
-
-        return oCLCliente.convertHashSetArray(oHsData);
+        oCICliente = oCMCategoria;
+        oHsData = oCICliente.consultAllClienteCIC();
+        CLCliente oLogicalCategoria = new CLCliente();
+        return oLogicalCategoria.convertHashSetArray(oHsData);
 
     }
 
@@ -270,11 +273,11 @@ public class CVMostrarInformacion extends javax.swing.JFrame {
     }
 
     private Object[][] loadCondicion() {
-        oCLCliente = new CLCliente();
+        oCICliente = oCMCategoria;
+        oHsData = oCICliente.consultAllClienteCIC();
+        CLCliente oLogicalCategoria = new CLCliente();
 
-        oHsData = oCLCliente.consultAllClienteCIC();
-
-        return oCLCliente.codicion(oHsData);
+        return oLogicalCategoria.codicion(oHsData);
 
     }
 
