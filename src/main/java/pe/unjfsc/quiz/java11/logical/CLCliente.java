@@ -11,7 +11,7 @@ public class CLCliente {
     private HashSet<CECliente> oHsData;
     private CECliente oCliente;
 
-    public CLCliente(){
+    public CLCliente() {
         LOG.info("[FSI] Start CMRetiroSaldoHashSet before crear la instancia: {} ", oHsData);
         oHsData = new HashSet<>();
 
@@ -22,11 +22,9 @@ public class CLCliente {
         //oHsData.add(new CECliente(4, "2005", 2005.99));
         //oHsData.add(new CECliente(5, "2006", 2006.99));
         LOG.info("[FSI] After - Cpunt del HashSet : {}", oHsData.size());
-        
-        
+
     }
 
-    
     //METODOS
     public Object[][] convertHashSetArray(HashSet<CECliente> poHsData) {
 
@@ -46,6 +44,33 @@ public class CLCliente {
             iRow++;
         }
         return aDataResponse;
+    }
+
+    /* Si el saldo (impuesto - 20% retencion)/2 es > 200 agregar en una nueva 
+        lista para mostrar la información.*/
+    public Object codicion(HashSet<CECliente> poHsData) {
+
+        String[][] aDataResponse = new String[poHsData.size()][9];
+        int iRow = 0;
+
+        for (CECliente oItem : poHsData) {
+            double cd = (oItem.getImpuesto() - oItem.getRetencion20()) / 2;
+            if (cd > 200) {
+                aDataResponse[iRow][0] = oItem.getOrdenP();
+                aDataResponse[iRow][1] = oItem.getOrden();
+                aDataResponse[iRow][2] = oItem.getNombre();
+                aDataResponse[iRow][3] = String.valueOf(oItem.getImpPedido());
+                aDataResponse[iRow][4] = String.valueOf(oItem.getImpuesto());
+                aDataResponse[iRow][5] = String.valueOf(oItem.getTotalProy());
+                aDataResponse[iRow][6] = String.valueOf(oItem.getRetencion20());
+                aDataResponse[iRow][7] = String.valueOf(oItem.getRetencion30());
+                aDataResponse[iRow][8] = String.valueOf(oItem.getRetencion40());
+            }
+
+            iRow++;
+        }
+        return aDataResponse;
+
     }
 
     public Object Impuesto(double ImpPedido) {
